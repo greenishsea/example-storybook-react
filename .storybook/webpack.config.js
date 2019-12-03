@@ -1,3 +1,6 @@
+const path = require('path')
+const rootPath = path.resolve(__dirname, '../')
+
 module.exports = {
   module: {
     rules: [
@@ -39,6 +42,15 @@ module.exports = {
             options: {
               modules: true,
             },
+          },
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              resources: [
+                './assets/scss/_variables.scss',
+              ],
+              rootPath
+            }
           },
         ]
       },

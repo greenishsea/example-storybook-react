@@ -4,5 +4,16 @@ module.exports = withSass({
   cssLoaderOptions: {
     importLoaders: 1,
     localIdentName: "[local]___[hash:base64:5]",
+  },
+  webpack: (config, { buildId, dev, isServer, defaultLoaders }) => {
+    config.module.rules.push({
+      enforce: "pre",
+      test: /.scss$/,
+      loader: "sass-resources-loader",
+      options: {
+        resources: ["./assets/scss/_variables.scss"]
+      }
+    })
+    return config
   }
 })
