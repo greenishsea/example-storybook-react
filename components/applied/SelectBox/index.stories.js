@@ -1,11 +1,11 @@
-
 import React from 'react'
-import { storiesOf } from '@storybook/react'
+// import { withKnobs, text, boolean, number } from "@storybook/addon-knobs"
 
 // ---------------------------
 // Target
 // ---------------------------
-import Target from './index'
+import SelectBox from './index'
+import MarkdownText from './index.md'
 
 // ---------------------------
 // Properties
@@ -31,24 +31,14 @@ const getPropsWithUpdate = (update) => {
 }
 
 // ---------------------------
-// Decorators
-// ---------------------------
-const styles = {
-  textAlign: 'center',
-}
-const PositionDecorator = (storyFn) => (
-  <div style={styles}>
-    { storyFn() }
-  </div>
-)
-
-// ---------------------------
 // Stories
 // ---------------------------
-storiesOf('Applied', module)
-  .addDecorator(PositionDecorator)
-  .add(
-    'SelectBox',
-    () => <Target {...getPropsWithUpdate()} />,
-    { notes: 'A very simple drop down box' }
-  )
+export default {
+  title: 'Applied|SelectBox',
+  component: SelectBox,
+  includeStories: /^SelectBox/,
+  parameters: { notes: { markdown: MarkdownText } },
+  // decorators: [withKnobs],
+}
+
+export const SelectBoxDefault = () => <SelectBox {...getPropsWithUpdate()} />

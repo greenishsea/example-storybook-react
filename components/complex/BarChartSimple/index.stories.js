@@ -1,11 +1,10 @@
-
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 // ---------------------------
 // Target
 // ---------------------------
-import Target from './index'
+import BarChartSimple from './index'
+import MarkdownText from './index.md'
 
 // ---------------------------
 // Properties
@@ -36,9 +35,12 @@ const getPropsWithUpdate = (update) => {
 // ---------------------------
 // Stories
 // ---------------------------
-storiesOf('Complex', module)
-  .add(
-    'BarChartSimple',
-    () => <Target {...getPropsWithUpdate()} />,
-    { notes: 'A simple bar chart' }
-  )
+export default {
+  title: 'Complex|BarChartSimple',
+  component: BarChartSimple,
+  includeStories: /^BarChartSimple/,
+  parameters: { notes: { markdown: MarkdownText } },
+}
+
+export const BarChartSimpleDefault = () => <BarChartSimple {...getPropsWithUpdate()} />
+  

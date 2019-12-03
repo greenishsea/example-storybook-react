@@ -1,11 +1,11 @@
 
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 // ---------------------------
 // Target
 // ---------------------------
-import Target from './index'
+import LinkButton from './index'
+import MarkdownText from './index.md'
 
 // ---------------------------
 // Properties
@@ -20,21 +20,16 @@ const getPropsWithUpdate = (update) => {
 }
 
 // ---------------------------
-// Decorators
-// ---------------------------
-const styles = {
-  textAlign: 'center', // For inline element
-}
-const PositionDecorator = (storyFn) => (
-  <div style={styles}>
-    { storyFn() }
-  </div>
-)
-
-// ---------------------------
 // Stories
 // ---------------------------
-storiesOf('Applied', module)
-  .addDecorator(PositionDecorator)
-  .add('LinkButton', () => <Target />)
-  .add('LinkButton to Top', () => <Target {...getPropsWithUpdate()} />)
+export default {
+  title: 'Applied|LinkButton',
+  component: LinkButton,
+  // includeStories: ['LinkButtonDefault', 'LinkButtonToTop', 'LinkButtonToBack'],
+  includeStories: /^LinkButton/,
+  parameters: { notes: { markdown: MarkdownText } }
+}
+
+export const LinkButtonDefault = () => <LinkButton />
+export const LinkButtonToTop = () => <LinkButton {...getPropsWithUpdate()} />
+export const LinkButtonToLeft = () => <LinkButton {...getPropsWithUpdate({linkLabel: 'Left'})} />
