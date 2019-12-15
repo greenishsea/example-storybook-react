@@ -1,5 +1,6 @@
 import { configure, addParameters, addDecorator } from '@storybook/react'
 // import centered from '@storybook/addon-centered/react'
+import { withA11y } from '@storybook/addon-a11y';
 
 addParameters({ options: {
   name: 'Storybook for Next Project',
@@ -12,6 +13,7 @@ addParameters({ options: {
 // ---------------------------
 // Decorators
 // ---------------------------
+addDecorator(withA11y)
 // addDecorator(centered) // If add this, Docs tab does not work well
 
 const styles = {
