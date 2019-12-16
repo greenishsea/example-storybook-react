@@ -11,7 +11,7 @@ module.exports = withSass({
       test: /.scss$/,
       loader: "sass-resources-loader",
       options: {
-        resources: ["./assets/scss/_variables.scss"]
+        resources: ["./assets/styles/index.scss"]
       }
     })
     return config

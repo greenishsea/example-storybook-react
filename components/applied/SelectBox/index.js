@@ -7,6 +7,9 @@ import Select from '@material-ui/core/Select'
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'inline-block'
+  },
+  selectStyle: {
+    fontSize: '1.8rem'
   }
 }))
 
@@ -28,6 +31,7 @@ export default function SelectBox(props) {
           native
           value={props.activeValue}
           onChange={props.onChange}
+          className={classes.selectStyle}
           input={
             <OutlinedInput name="age" labelWidth={labelWidth} id="outlined-age-native-simple" />
           }

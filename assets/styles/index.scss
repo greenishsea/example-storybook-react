@@ -1,0 +1,25 @@
+@charset 'UTF-8';
+/* - FILE NAME RULE - omit plural 's' to avoid confusion */
+
+/* 1. Vendors */
+@import 'vendor/_normalize.css';
+// @import 'vendor/bootstrap.css';
+
+/* 2. Configuration and helpers */
+@import 'variable/_color.scss';
+@import 'variable/_font.scss';
+@import 'variable/_layout.scss';
+@import 'variable/_path.scss';
+
+/* 3. mixin */
+@import "mixin/_mixin.scss";
+
+/* 4. Base */
+@import 'base/_base.scss';
+// @import 'base/_grid.scss';
+@import 'base/_highlight.scss';
+@import 'base/_typography.scss';
+@import 'base/_util.scss';
+
+/* 5. Animation */
+@import 'animation/_pulse.scss';

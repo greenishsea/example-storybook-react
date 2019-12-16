@@ -47,7 +47,7 @@ module.exports = {
             loader: 'sass-resources-loader',
             options: {
               resources: [
-                './assets/scss/_variables.scss',
+                './assets/styles/index.scss',                
               ],
               rootPath
             }
